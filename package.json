@@ -1,0 +1,14 @@
+{
+  "name": "portfolio_ejs",
+  "version": "1.0.0",
+  "description": "portfolio de Marie-Maxime Tanguay réalisé en EJS et node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marie-Maxime Tanguay",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
