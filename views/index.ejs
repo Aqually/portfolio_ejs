@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Marie-Maxime Tanguay">
+    <meta name="description" content="Portfolio de Marie-Maxime Tanguay, développeuse web. Spécialiste d'intégration et de programmation web">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/795bf9c35b.js"></script>
+    <meta name="google-site-verification" content="W18Y1agkkf58YJsAJ_1nNSy1Igz2l--iPxHlbCEHefo" />
+    <title>Marie-Maxime Tanguay, Développeuse web</title>
+
+</head>
+<body>
+    <main>
+        <div class="container">
+            <input id="toggle" type="checkbox" />
+
+            <label class="toggle-container" for="toggle">
+                    <span class="button button-toggle"></span>
+                </label>
+
+            <nav class="nav">
+                    <ul>
+                    <% Object.keys(menu).forEach(function(key) { %>
+                        <li>
+                            <a class="nav-item" href="<%= menu[key].url %>"><%= menu[key].titre %></a>
+                        </li>
+                    <% }) %>
+                    </ul>
+            </nav>
+        </div>
+
+        <section id="intro">
+            <header>
+                <h1><%= intro.titre %></h1>
+                <h2><%= intro.sousTitre %></h2>
+           </header>
+           <div>
+                <img src="<%= intro.image.url %>" alt="<%= intro.image.alt %>" title="<%= intro.image.alt %>" />
+                <p><%= intro.texte %></p>
+            </div>
+        </section>
+
+        <section id="sectionProjet">
+                <h2><%= projets.titre %></h2>
+                <% Object.keys(listeProjets).forEach(function(key) { %>
+                <article style="background-image: url(' <%= listeProjets[key].url %> ')" class="projet">
+                    <div>
+                        <h3><%= listeProjets[key].titre %></h3>
+                        <p> <%= listeProjets[key].description %></p>
+                        <div>
+                            <a href="<%= listeProjets[key].lien %>"><img class="icon" alt="lien vers le projet" src="img/link.png"/></a>
+                            <a href="<%= listeProjets[key].github %>"><img alt="lien vers le github du projet" class="icon" src="img/github.png"/></a>
+                        </div>
+                    </div>
+                </article>
+                <% }) %>
+        </section>
+
+        <section id="propos">
+            <h2>À propos de moi</h2>
+            <div class="propos_article">
+                <p>Je suis Marie-Maxime Tanguay, étudiante en multimédia qui adore la programmation et l’intégration Web et qui désire une carrière dans ce domaine.</p>
+                <p>Amatrice de jeux vidéo, de technologies, de films de super héros et de patin à roues alignées.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2> <%= contact.titre %></h2>
+            <form>
+                <div>
+                    <input type="text" id="name" name="user_name" placeholder="<%= contact.nom %>" required>
+                    <input type="email" id="mail" name="user_mail" placeholder="<%= contact.couriel %>" required>
+                </div>
+                <textarea id="msg" name="user_message" placeholder="<%= contact.message %>" required></textarea>
+                <button type="button">Envoyer</button>
+            </form>
+            <div class="msgEnvoie" style="display: none">
+                Message envoyé avec succès!
+                <span class="autreMsg">envoyer un autre message</span>
+            </div>
+        </section>
+
+        <footer>
+            <ul>
+                <% Object.keys(footer).forEach(function(key) { %>
+                <li><a href="<%= footer[key].url %>"><i class="fa fa-<%= footer[key].class %>" aria-hidden="true"></i></a></li>
+                <% }) %>
+            </ul>
+        </footer>
+
+    </main>
+    <script type="text/javascript" src="js/bundle.js"></script>
+</body>
+
+</html>
