@@ -5,3 +5,4 @@ server.js
 # IntelliJ
 *.iml
 /.idea
+quickstart.js
